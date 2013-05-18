@@ -14,8 +14,8 @@ nav, section, summary, time, mark, audio, video
 
 html {
     padding: 0;
-    color: black;
-    background: #EFEFEF;
+    color: #666;
+    
 }
 
 body {
@@ -147,9 +147,7 @@ footer span {
 	padding: 6px;
 }
 
-.navbar {
-    text-transform: uppercase;
-}
+
 
 .loader .page-progress-bar {
     margin: 14px 0 0 0 ;

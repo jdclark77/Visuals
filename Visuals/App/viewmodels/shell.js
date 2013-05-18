@@ -1,8 +1,18 @@
-﻿define(['durandal/system', 'durandal/plugins/router', 'services/logger'],
-    function (system, router, logger) {
+﻿define(['durandal/system', 'durandal/plugins/router', 'services/logger', './Utilities/Utilities'],
+    function (system, router, logger, Utilities) {
+    	util = new Utilities();
+    	breadCrumbsArray = util.BreadCrumbs('#/home');
+	    window.router = router;
         var shell = {
             activate: activate,
-            router: router
+            router: router,
+            breadCrumbs: ko.computed(function () {
+	            var route = router.activeRoute();
+	            if (route != undefined) {
+	            	return util.BreadCrumbs(route.url);
+	            }
+	            return [];
+            })
         };
         
         return shell;

@@ -14,6 +14,7 @@ namespace Visuals
               new ScriptBundle("~/scripts/vendor")
                 .Include("~/scripts/jquery-{version}.js")
                 .Include("~/scripts/knockout-{version}.debug.js")
+				 .Include("~/scripts/knockout.mapping-{version}.js")
                 .Include("~/scripts/sammy-{version}.js")
                 .Include("~/scripts/toastr.js")
                 .Include("~/scripts/Q.js")
@@ -30,6 +31,7 @@ namespace Visuals
                 .Include("~/Content/durandal.css")
                 .Include("~/Content/toastr.css")
                 .Include("~/Content/app.css")
+                .Include("~/Content/base.css")
               );
         }
 

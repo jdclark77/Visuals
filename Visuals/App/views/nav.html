@@ -1,12 +1,12 @@
 ﻿<nav class="navbar navbar-fixed-top">
     <div class="navbar-inner">
-        <a class="brand" href="/">
-            <span class="title">Hot Towel SPA</span> 
-        </a>
-        <div class="btn-group" data-bind="foreach: router.visibleRoutes">
-            <a data-bind="css: { active: isActive }, attr: { href: hash }, text: name" 
-                class="btn btn-info" href="#"></a>
-        </div>
+        <ul class="nav breadcrumbs" data-bind="foreach: breadCrumbs">
+            <li><a data-bind="text: Name, attr: {'title':Tip, 'href': Route}"></a></li>
+        </ul>
+        <ul class="nav pull-right" data-bind="foreach: router.visibleRoutes">
+           <li> <a data-bind="css: { active: isActive }, attr: { href: hash }, text: name" 
+                href="#"></a></li>
+        </ul>
         <div class="loader pull-right" data-bind="css: { active: router.isNavigating }">
             <div class="progress progress-striped active page-progress-bar">
                 <div class="bar" style="width: 100px;"></div>

@@ -182,15 +182,24 @@
     <Content Include="App\durandal\widget.js" />
     <Content Include="App\main.js" />
     <Content Include="App\services\logger.js" />
+    <Content Include="App\viewmodels\Utilities\BreadCrumb.js">
+      <DependentUpon>BreadCrumb.coffee</DependentUpon>
+    </Content>
     <Content Include="App\viewmodels\details.js" />
     <Content Include="App\viewmodels\home.js" />
     <Content Include="App\viewmodels\shell.js" />
+    <Content Include="App\viewmodels\Utilities\Utilities.js">
+      <DependentUpon>Utilities.coffee</DependentUpon>
+    </Content>
     <Content Include="App\views\details.html" />
     <Content Include="App\views\footer.html" />
     <Content Include="App\views\home.html" />
     <Content Include="App\views\nav.html" />
     <Content Include="App\views\shell.html" />
     <Content Include="Content\app.css" />
+    <Content Include="Content\base.css">
+      <DependentUpon>base.scss</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -204,6 +213,19 @@
     <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Content\base.scss">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>False</DebugInfo>
+    </Content>
+    <Content Include="App\viewmodels\Utilities\BreadCrumb.coffee" />
+    <Content Include="App\viewmodels\Utilities\Utilities.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <None Include="Scripts\breeze.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -214,6 +236,7 @@
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\knockout-2.2.1.debug.js" />
     <Content Include="Scripts\knockout-2.2.1.js" />
+    <Content Include="Scripts\knockout.mapping-2.4.1.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
