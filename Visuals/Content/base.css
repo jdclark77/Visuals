@@ -1,24 +1,66 @@
 .navbar-inner {
   /* Note: This gradient may render differently in browsers that don't support the unprefixed gradient syntax */
-  /* IE10 Consumer Preview */
   background-image: -ms-linear-gradient(top left, #fafafa 0%, #f0f0f0 100%);
-  /* Mozilla Firefox */
+  /* IE10 Consumer Preview */
   background-image: -moz-linear-gradient(top left, #fafafa 0%, #f0f0f0 100%);
-  /* Opera */
+  /* Mozilla Firefox */
   background-image: -o-linear-gradient(top left, #fafafa 0%, #f0f0f0 100%);
-  /* Webkit (Safari/Chrome 10) */
+  /* Opera */
   background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #fafafa), color-stop(1, #f0f0f0));
-  /* Webkit (Chrome 11+) */
+  /* Webkit (Safari/Chrome 10) */
   background-image: -webkit-linear-gradient(top left, #fafafa 0%, #f0f0f0 100%);
-  /* W3C Markup, IE10 Release Preview */
-  background-image: linear-gradient(to bottom right, #fafafa 0%, #f0f0f0 100%); }
+  /* Webkit (Chrome 11+) */
+  background-image: linear-gradient(to bottom right, #fafafa 0%, #f0f0f0 100%);
+  /* W3C Markup, IE10 Release Preview */ }
 
 .nav {
-  padding-right: 130px; }
+  padding-right: 180px; }
 
 .navbar .breadcrumbs > li > a {
   color: #0088cc; }
 
 .breadcrumbs {
   padding-left: 130px; }
+
+.login {
+  position: absolute;
+  right: 25px;
+  padding-top: 10px; }
+
+.login a {
+  color: #0088cc; }
+
+.login input:nth-child(1) {
+  float: left;
+  margin-left: 15px;
+  width: 115px; }
+
+.login input:nth-child(2) {
+  float: left;
+  margin-left: 15px;
+  width: 115px; }
+
+.login div {
+  position: absolute;
+  width: 290px;
+  right: -20px;
+  top: 55px;
+  height: 45px;
+  padding-top: 10px;
+  padding-right: 20px; }
+
+.login div {
+  /* Note: This gradient may render differently in browsers that don't support the unprefixed gradient syntax */
+  /* IE10 Consumer Preview */
+  background-image: -ms-linear-gradient(top left, #cccccc 0%, #aaaaaa 100%);
+  /* Mozilla Firefox */
+  background-image: -moz-linear-gradient(top left, #cccccc 0%, #aaaaaa 100%);
+  /* Opera */
+  background-image: -o-linear-gradient(top left, #cccccc 0%, #aaaaaa 100%);
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #cccccc), color-stop(1, #aaaaaa));
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-linear-gradient(top left, #cccccc 0%, #aaaaaa 100%);
+  /* W3C Markup, IE10 Release Preview */
+  background-image: linear-gradient(to bottom right, #cccccc 0%, #aaaaaa 100%); }
 

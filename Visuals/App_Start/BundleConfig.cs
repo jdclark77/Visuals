@@ -20,6 +20,8 @@ namespace Visuals
                 .Include("~/scripts/Q.js")
                 .Include("~/scripts/breeze.debug.js")
                 .Include("~/scripts/bootstrap.js")
+				.Include("~/scripts/bootstrap-tooltip.js")
+				.Include("~/scripts/bootstrap-popover.js")
                 .Include("~/scripts/moment.js")
               );
 

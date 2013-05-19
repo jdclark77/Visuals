@@ -12,7 +12,9 @@
 	            	return util.BreadCrumbs(route.url);
 	            }
 	            return [];
-            })
+            }),
+            LoggingIn: ko.observable(false),
+        	LogIn: function() { this.LoggingIn(!this.LoggingIn());}
         };
         
         return shell;
@@ -25,6 +27,7 @@
         function boot() {
             router.mapNav('home');
             router.mapNav('details');
+            router.mapNav('feeds');
             log('Hot Towel SPA Loaded!', null, true);
             return router.activate('home');
         }

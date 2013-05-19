@@ -27,7 +27,6 @@ body {
 }
 
 h1, h2, h3 {
-    text-transform: uppercase;
     letter-spacing: -1px !important;
     color: #777;
 }
@@ -160,10 +159,7 @@ footer span {
     visibility: visible;
 }
 
-.btn {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+
 
 .btn-info {
     background-color: #0081C2;
