@@ -7,7 +7,7 @@
 		    <li> <a data-bind="css: { active: isActive }, attr: { href: hash }, text: name" 
 		            href="#"></a></li>
 	    </ul>
-		<div class="login">
+		<div class="login" data-bind="clickoutside: LoggingIn">
             <p><a href="" data-bind="click: LogIn">Login</a> | <a data-toggle="modal" href="#signup">Sign-up</a></p>
             <div data-bind="visible: LoggingIn()">
                 <input class="small" type="text" placeholder="User Id"/>

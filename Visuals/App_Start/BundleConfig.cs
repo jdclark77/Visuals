@@ -23,6 +23,9 @@ namespace Visuals
 				.Include("~/scripts/bootstrap-tooltip.js")
 				.Include("~/scripts/bootstrap-popover.js")
                 .Include("~/scripts/moment.js")
+				.Include("~/scripts/jquery.ba-outside-events.min.js")
+				.Include("~/scripts/visuals.bindings.js")
+				
               );
 
             bundles.Add(
