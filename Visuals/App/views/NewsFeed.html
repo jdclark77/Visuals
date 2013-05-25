@@ -1,0 +1,50 @@
+﻿<section>
+	<h2 class="page-title" data-bind="text: title"></h2>
+	<div data-bind="foreach: Posts">
+		
+		<div class="row mobile">
+        <div class="span2 phone-one columns">
+            <img class="write-avatar" data-bind="attr: { 'src': Avatar } " />
+        </div>
+        <div class="span8 write-post columns">
+            <p style="padding-bottom:10px"><strong><a data-bind="attr: { 'href': AvatarLink }, text: User"></a> said:</strong><br /><span data-bind="	text: Message"></span></p>
+            <div style="padding-bottom:20px" class="row" data-bind="with: $data.Article">
+                <div class="span2 phone-one columns">
+                    <img data-bind="attr: { 'src': $data.Thumbnail } "/>
+                </div>
+                <div class="span5 columns">
+                    <p><a data-bind="attr: { 'href': $data.Link }, text: $data.Title"></a><br />
+                        <span data-bind="text: $data.Synopsis"></span></p>
+                </div>
+            </div>
+
+
+            <section class="comments"  data-bind="foreach: $data.Comments">
+                <div class="row" style="padding-bottom:20px">
+                    <div class="span1 columns" >
+                        <img data-bind="attr: { 'src': Avatar } " />
+                    </div>
+                    <div class="span6 write-comment columns"><a data-bind="attr: { 'href': AvatarLink }, text: User"></a> says "<span data-bind="	text: Message"></span>"</div>
+                </div>
+            </section>
+            <div class="row ">
+                <div class="span1 columns">
+                    <img data-bind="attr: { 'src': $parent.MiniAvatar } " />
+                </div>
+            
+	            <div class="span6 write-comment ">
+		            <input type="text" data-bind="visible: !Editing(), text: name, click: Edit"  placeholder="Write a comment..." class="ten phone-three columns" /> 
+		            <input type="text" data-bind="visible: Editing, value: NewComment, hasfocus: Editing" placeholder="" class="ten phone-three columns" /> 
+	            </div>
+
+            </div>
+    </div>
+       
+         
+    </div>
+    <div data-bind="visible: ($index() != ($parent.Posts().length - 1).toString())"> <hr/></div>
+        
+	</div>
+</section>
+
+

@@ -12,7 +12,8 @@ namespace Visuals
 
             bundles.Add(
               new ScriptBundle("~/scripts/vendor")
-                .Include("~/scripts/jquery-{version}.js")
+
+			  .Include("~/scripts/jquery-{version}.js")
                 .Include("~/scripts/knockout-{version}.debug.js")
 				 .Include("~/scripts/knockout.mapping-{version}.js")
                 .Include("~/scripts/sammy-{version}.js")
@@ -25,7 +26,6 @@ namespace Visuals
                 .Include("~/scripts/moment.js")
 				.Include("~/scripts/jquery.ba-outside-events.min.js")
 				.Include("~/scripts/visuals.bindings.js")
-				
               );
 
             bundles.Add(

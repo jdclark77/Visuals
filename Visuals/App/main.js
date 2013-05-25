@@ -1,29 +1,44 @@
-﻿require.config({
-    paths: { "text": "durandal/amd/text" }
-});
+(function() {
 
-define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'durandal/plugins/router', 'services/logger'],
-    function (app, viewLocator, system, router, logger) {
+  require.config({
+    baseUrl: "/App",
+    paths: {
+      "text": "durandal/amd/text",
+      "lib": "/Scripts",
+      "data": "/Scripts/Data",
+      "plugins": "/Scripts/Plugins"
+    },
+    waitSeconds: 15,
+    shim: {
+      'plugins/underscore': {
+        exports: '_'
+      },
+      'data/Requests': {
+        deps: ['plugins/amplify'],
+        exports: 'amplify'
+      },
+      'data/Data': {
+        exports: 'MockData'
+      }
+    },
+    callback: function() {
+      return alert('finished');
+    }
+  });
 
-    // Enable debug message to show in the console 
+  define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'durandal/plugins/router', 'services/logger', 'plugins/underscore', 'data/Requests'], function(app, viewLocator, system, router, logger, _, amplify) {
     system.debug(true);
-
-    app.start().then(function () {
-        toastr.options.positionClass = 'toast-bottom-right';
-        toastr.options.backgroundpositionClass = 'toast-bottom-right';
-
-        router.handleInvalidRoute = function (route, params) {
-            logger.logError('No Route Found', route, 'main', true);
-        };
-
-        // When finding a viewmodel module, replace the viewmodel string 
-        // with view to find it partner view.
-        router.useConvention();
-        viewLocator.useConvention();
-        
-        // Adapt to touch devices
-        app.adaptToDevice();
-        //Show the app by setting the root view model for our application.
-        app.setRoot('viewmodels/shell', 'entrance');
+    return app.start().then(function() {
+      toastr.options.positionClass = 'toast-bottom-right';
+      toastr.options.backgroundpositionClass = 'toast-bottom-right';
+      router.handleInvalidRoute = function(route, params) {
+        return logger.logError('No Route Found', route, 'main', true);
+      };
+      router.useConvention();
+      viewLocator.useConvention();
+      app.adaptToDevice();
+      return app.setRoot('viewmodels/shell', 'entrance');
     });
-});
+  });
+
+}).call(this);

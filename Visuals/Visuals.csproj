@@ -153,6 +153,7 @@
     <Compile Include="App_Start\HotTowelConfig.cs" />
     <Compile Include="App_Start\HotTowelRouteConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BreezeController.cs" />
     <Compile Include="Controllers\HotTowelController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -180,7 +181,9 @@
     <Content Include="App\durandal\viewModel.js" />
     <Content Include="App\durandal\viewModelBinder.js" />
     <Content Include="App\durandal\widget.js" />
-    <Content Include="App\main.js" />
+    <Content Include="App\main.js">
+      <DependentUpon>main.coffee</DependentUpon>
+    </Content>
     <Content Include="App\services\logger.js" />
     <Content Include="App\viewmodels\feeds.js">
       <DependentUpon>feeds.coffee</DependentUpon>
@@ -198,6 +201,9 @@
     <Content Include="App\views\footer.html" />
     <Content Include="App\views\home.html" />
     <Content Include="App\views\nav.html" />
+    <Content Include="App\viewmodels\NewsFeed.js">
+      <DependentUpon>NewsFeed.coffee</DependentUpon>
+    </Content>
     <Content Include="App\views\shell.html" />
     <Content Include="App\views\feeds.html" />
     <Content Include="Content\app.css" />
@@ -209,10 +215,13 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\durandal.css" />
+    <Content Include="Content\foundation.css" />
     <Content Include="Content\ie10mobile.css" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\images\icon.png" />
+    <Content Include="Content\normalize.css" />
+    <Content Include="Content\qunit-1.11.0.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />
@@ -236,14 +245,48 @@
       <Bare>False</Bare>
       <Iced>False</Iced>
     </Content>
+    <Content Include="App\viewmodels\NewsFeed.coffee" />
+    <Content Include="Scripts\Data\Comment.js">
+      <DependentUpon>Comment.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Data\Data.js">
+      <DependentUpon>Data.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Data\Mapping.js">
+      <DependentUpon>Mapping.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Data\Pic.js">
+      <DependentUpon>Pic.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Data\Post.js">
+      <DependentUpon>Post.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Data\Requests.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </Content>
+    <Content Include="App\main.coffee" />
+    <Content Include="App\views\NewsFeed.html" />
+    <Content Include="Scripts\Data\Data.coffee" />
+    <Content Include="Scripts\Data\Mapping.coffee" />
+    <Content Include="Scripts\Data\Comment.coffee" />
+    <Content Include="Scripts\Data\Pic.coffee" />
+    <Content Include="Scripts\Data\Post.coffee" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <None Include="Scripts\breeze.intellisense.js" />
+    <Content Include="Scripts\Plugins\amplify.js" />
+    <Content Include="Scripts\Plugins\amplify.min.js" />
     <Content Include="Scripts\bootstrap-popover.js" />
     <Content Include="Scripts\bootstrap-tooltip.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\breeze.debug.js" />
     <Content Include="Scripts\breeze.min.js" />
+    <Content Include="Scripts\Data\Requests.js">
+      <DependentUpon>Requests.coffee</DependentUpon>
+    </Content>
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery.ba-outside-events.min.js" />
@@ -253,8 +296,11 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\Plugins\foundation.min.js" />
+    <Content Include="Scripts\Plugins\underscore.js" />
     <Content Include="Scripts\q.js" />
     <Content Include="Scripts\q.min.js" />
+    <Content Include="Scripts\qunit-1.11.0.js" />
     <Content Include="Scripts\sammy-0.7.4.js" />
     <Content Include="Scripts\sammy-0.7.4.min.js" />
     <Content Include="Scripts\toastr.js" />
