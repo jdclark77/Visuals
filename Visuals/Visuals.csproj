@@ -205,6 +205,8 @@
     <Content Include="App\viewmodels\Utilities\Utilities.js">
       <DependentUpon>Utilities.coffee</DependentUpon>
     </Content>
+    <Content Include="App\viewmodels\social.js" />
+    <Content Include="App\viewmodels\socialdetail.js" />
     <Content Include="App\views\details.html" />
     <Content Include="App\views\footer.html" />
     <Content Include="App\views\home.html" />
@@ -216,6 +218,8 @@
     <Content Include="App\views\feeds.html" />
     <Content Include="App\views\Store.html" />
     <Content Include="App_Data\Visuals.sdf" />
+    <Content Include="App\views\social.html" />
+    <Content Include="App\views\socialdetail.html" />
     <Content Include="Content\app.css" />
     <Content Include="Content\base.css">
       <DependentUpon>base.scss</DependentUpon>
