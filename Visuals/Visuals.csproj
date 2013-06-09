@@ -43,7 +43,10 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -158,6 +161,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Model1.Views.cs" />
+    <Compile Include="Models\VisualContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +193,9 @@
     <Content Include="App\viewmodels\feeds.js">
       <DependentUpon>feeds.coffee</DependentUpon>
     </Content>
+    <Content Include="App\viewmodels\store.js">
+      <DependentUpon>Store.coffee</DependentUpon>
+    </Content>
     <Content Include="App\viewmodels\Utilities\BreadCrumb.js">
       <DependentUpon>BreadCrumb.coffee</DependentUpon>
     </Content>
@@ -206,6 +214,8 @@
     </Content>
     <Content Include="App\views\shell.html" />
     <Content Include="App\views\feeds.html" />
+    <Content Include="App\views\Store.html" />
+    <Content Include="App_Data\Visuals.sdf" />
     <Content Include="Content\app.css" />
     <Content Include="Content\base.css">
       <DependentUpon>base.scss</DependentUpon>
@@ -246,6 +256,7 @@
       <Iced>False</Iced>
     </Content>
     <Content Include="App\viewmodels\NewsFeed.coffee" />
+    <Content Include="Models\Model1.edmx.sqlce" />
     <Content Include="Scripts\Data\Comment.js">
       <DependentUpon>Comment.coffee</DependentUpon>
     </Content>
@@ -274,6 +285,12 @@
     <Content Include="Scripts\Data\Comment.coffee" />
     <Content Include="Scripts\Data\Pic.coffee" />
     <Content Include="Scripts\Data\Post.coffee" />
+    <Content Include="App\viewmodels\Store.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <None Include="Scripts\breeze.intellisense.js" />
     <Content Include="Scripts\Plugins\amplify.js" />
@@ -307,7 +324,9 @@
     <Content Include="Scripts\toastr.min.js" />
     <Content Include="Scripts\visuals.bindings.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -319,12 +338,12 @@
     <Content Include="Views\HotTowel\index.cshtml" />
     <Content Include="Views\HotTowel\_splash.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,4 +1,4 @@
-define(['services/logger', 'data/Mapping', 'data/Data'], (logger, Mapping, MockData) ->
+define(['services/logger', 'data/Mapping'], (logger, Mapping) ->
 	
 	class NewsFeeds
 		constructor: (posts) ->
@@ -64,7 +64,7 @@ define(['services/logger', 'data/Mapping', 'data/Data'], (logger, Mapping, MockD
 				success: ( data ) =>
 					window.viewModel = this
 					map = new Mapping()
-					ko.mapping.fromJS(MockData, map.SocialNetworkMapping, this)
+					ko.mapping.fromJS(data, map.SocialNetworkMapping, this)
 					
 					return
     

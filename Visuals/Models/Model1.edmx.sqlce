@@ -1,0 +1,209 @@
+
+-- --------------------------------------------------
+-- Entity Designer DDL Script for SQL Server Compact Edition
+-- --------------------------------------------------
+-- Date Created: 05/26/2013 21:31:12
+-- Generated from EDMX file: C:\1) Solutions\Visuals\Visuals\Models\Model1.edmx
+-- --------------------------------------------------
+
+
+-- --------------------------------------------------
+-- Dropping existing FOREIGN KEY constraints
+-- NOTE: if the constraint does not exist, an ignorable error will be reported.
+-- --------------------------------------------------
+
+    ALTER TABLE [Posts] DROP CONSTRAINT [FK_PersonPost];
+GO
+    ALTER TABLE [Articles] DROP CONSTRAINT [FK_PostArticle];
+GO
+    ALTER TABLE [Comments] DROP CONSTRAINT [FK_PostComment];
+GO
+    ALTER TABLE [Pics] DROP CONSTRAINT [FK_PersonPic];
+GO
+    ALTER TABLE [Pics] DROP CONSTRAINT [FK_PersonPic1];
+GO
+
+-- --------------------------------------------------
+-- Dropping existing tables
+-- NOTE: if the table does not exist, an ignorable error will be reported.
+-- --------------------------------------------------
+
+    DROP TABLE [People];
+GO
+    DROP TABLE [Posts];
+GO
+    DROP TABLE [Articles];
+GO
+    DROP TABLE [Comments];
+GO
+    DROP TABLE [Pics];
+GO
+
+-- --------------------------------------------------
+-- Creating all tables
+-- --------------------------------------------------
+
+-- Creating table 'People'
+CREATE TABLE [People] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Property1] nvarchar(4000)  NOT NULL,
+    [MiniAvatar] nvarchar(4000)  NOT NULL,
+    [Link] nvarchar(4000)  NOT NULL,
+    [Name] nvarchar(4000)  NOT NULL
+);
+GO
+
+-- Creating table 'Posts'
+CREATE TABLE [Posts] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Avatar] nvarchar(4000)  NOT NULL,
+    [AvatarLink] nvarchar(4000)  NOT NULL,
+    [Message] nvarchar(4000)  NOT NULL,
+    [PersonId] int  NOT NULL,
+    [User] nvarchar(4000)  NOT NULL
+);
+GO
+
+-- Creating table 'Articles'
+CREATE TABLE [Articles] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Thumbnail] nvarchar(4000)  NOT NULL,
+    [Link] nvarchar(4000)  NOT NULL,
+    [Title] nvarchar(4000)  NOT NULL,
+    [Synopsis] nvarchar(4000)  NOT NULL,
+    [Post_Id] int  NOT NULL
+);
+GO
+
+-- Creating table 'Comments'
+CREATE TABLE [Comments] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Avatar] nvarchar(4000)  NOT NULL,
+    [User] nvarchar(4000)  NOT NULL,
+    [AvatarLink] nvarchar(4000)  NOT NULL,
+    [Message] nvarchar(4000)  NOT NULL,
+    [PostId] int  NOT NULL
+);
+GO
+
+-- Creating table 'Pics'
+CREATE TABLE [Pics] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Url] nvarchar(4000)  NOT NULL,
+    [Title] nvarchar(4000)  NOT NULL,
+    [Link] nvarchar(4000)  NOT NULL,
+    [PersonId] int  NOT NULL
+);
+GO
+
+-- --------------------------------------------------
+-- Creating all PRIMARY KEY constraints
+-- --------------------------------------------------
+
+-- Creating primary key on [Id] in table 'People'
+ALTER TABLE [People]
+ADD CONSTRAINT [PK_People]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'Posts'
+ALTER TABLE [Posts]
+ADD CONSTRAINT [PK_Posts]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'Articles'
+ALTER TABLE [Articles]
+ADD CONSTRAINT [PK_Articles]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'Comments'
+ALTER TABLE [Comments]
+ADD CONSTRAINT [PK_Comments]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'Pics'
+ALTER TABLE [Pics]
+ADD CONSTRAINT [PK_Pics]
+    PRIMARY KEY ([Id] );
+GO
+
+-- --------------------------------------------------
+-- Creating all FOREIGN KEY constraints
+-- --------------------------------------------------
+
+-- Creating foreign key on [PersonId] in table 'Posts'
+ALTER TABLE [Posts]
+ADD CONSTRAINT [FK_PersonPost]
+    FOREIGN KEY ([PersonId])
+    REFERENCES [People]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PersonPost'
+CREATE INDEX [IX_FK_PersonPost]
+ON [Posts]
+    ([PersonId]);
+GO
+
+-- Creating foreign key on [Post_Id] in table 'Articles'
+ALTER TABLE [Articles]
+ADD CONSTRAINT [FK_PostArticle]
+    FOREIGN KEY ([Post_Id])
+    REFERENCES [Posts]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PostArticle'
+CREATE INDEX [IX_FK_PostArticle]
+ON [Articles]
+    ([Post_Id]);
+GO
+
+-- Creating foreign key on [PostId] in table 'Comments'
+ALTER TABLE [Comments]
+ADD CONSTRAINT [FK_PostComment]
+    FOREIGN KEY ([PostId])
+    REFERENCES [Posts]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PostComment'
+CREATE INDEX [IX_FK_PostComment]
+ON [Comments]
+    ([PostId]);
+GO
+
+-- Creating foreign key on [PersonId] in table 'Pics'
+ALTER TABLE [Pics]
+ADD CONSTRAINT [FK_PersonPic]
+    FOREIGN KEY ([PersonId])
+    REFERENCES [People]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PersonPic'
+CREATE INDEX [IX_FK_PersonPic]
+ON [Pics]
+    ([PersonId]);
+GO
+
+-- Creating foreign key on [PersonId] in table 'Pics'
+ALTER TABLE [Pics]
+ADD CONSTRAINT [FK_PersonPic1]
+    FOREIGN KEY ([PersonId])
+    REFERENCES [People]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PersonPic1'
+CREATE INDEX [IX_FK_PersonPic1]
+ON [Pics]
+    ([PersonId]);
+GO
+
+-- --------------------------------------------------
+-- Script has ended
+-- --------------------------------------------------

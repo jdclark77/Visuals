@@ -1,8 +1,8 @@
 (function() {
 
   amplify.request.define("Posts", "ajax", {
-    url: window.Config.AppPath + "Breeze/Posts",
-    type: "POST",
+    url: window.Config.AppPath + "api/Breeze/Posts?user={user}",
+    type: "GET",
     dataType: "json"
     /*
     	decoder: ( data, status, xhr, success, error ) ->

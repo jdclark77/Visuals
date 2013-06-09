@@ -1,6 +1,6 @@
 amplify.request.define( "Posts", "ajax", {
-	url: window.Config.AppPath + "Breeze/Posts"
-	type: "POST"
+	url: window.Config.AppPath + "api/Breeze/Posts?user={user}"
+	type: "GET"
 	dataType: "json"
 	# If success and error functions aren't defined in the request call, the decoder below can be defined 
 	# which will always be called

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="11128125c5b24ce8a480a0dcb46302dd" Name="Diagram1" >
+        <EntityTypeShape EntityType="Model1.Person" Width="1.5" PointX="1.375" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.Post" Width="1.5" PointX="3.75" PointY="1.375" />
+        <AssociationConnector Association="Model1.PersonPost" />
+        <EntityTypeShape EntityType="Model1.Article" Width="1.5" PointX="6.375" PointY="2" />
+        <EntityTypeShape EntityType="Model1.Comment" Width="1.5" PointX="9" PointY="2" />
+        <AssociationConnector Association="Model1.PostArticle" />
+        <AssociationConnector Association="Model1.PostComment" />
+        <EntityTypeShape EntityType="Model1.Pic" Width="1.5" PointX="5.75" PointY="5.25" />
+        <AssociationConnector Association="Model1.PersonPic" />
+        <AssociationConnector Association="Model1.PersonPic1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
