@@ -1,0 +1,32 @@
+﻿http://msdn.microsoft.com/en-us/data/jj591621
+
+Run the Enable-Migrations command in Package Manager Console
+Add-Migration will scaffold the next migration based on changes you have made to your model since the last migration was created
+Update-Database will apply any pending migrations to the database
+
+
+I enabled automatic migrations by using a switch in the Enable-Migrations command:
+	Enable-Migrations -EnableAutomaticMigrations
+
+My migration was called AddHtmlElements
+	Add-Migration AddHtmlElements
+
+I used the verbose switch to see what was going on
+	Update-Database -Verbose
+
+I got the error: System.Data.SqlServerCe.SqlCeException (0x80004005): The data was truncated while converting from one data type to another. [ Name of function(if known) =  ]
+I saw that the last sql command ran had to do with the Sessions.Title attribute.
+I read: http://social.msdn.microsoft.com/Forums/en-US/adonetefx/thread/7e1339d6-203d-4687-a1dc-244643734526
+I thought the problem was with the length of the Sessions.Title attribute so I changed
+		
+		[Required, MaxLength(50)]
+		public string Title { get; set; }
+to
+		[Required, MaxLength(100)]
+        public string Title { get; set; }
+
+I ran:
+
+1) Enable-Migrations -EnableAutomaticMigrations
+2) Add-Migration AddHtmlElements
+3) Update-Database -Verbose

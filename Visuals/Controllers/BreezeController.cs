@@ -16,10 +16,25 @@ namespace Visuals.Controllers
 					             MiniAvatar = "http://placehold.it/50x50",
 					             Link = "Home/Home"
 				             };
-			var context = new VisualContext();
-			
+			//var context = new VisualContext();
+			using(var context = new VisualContext())
+			{
+				var all = context.People.SqlQuery("select *");
+
+			}
+
+			using (var context = new VisualContext())
+			{
 				context.People.Add(person);
 				context.SaveChanges();
+			}
+			using (var context = new VisualContext())
+			{
+				var all = context.People.SqlQuery("select *");
+
+			}
+			//	context.People.Add(person);
+			//	context.SaveChanges();
 			
 			/*using(var postContext = new Model1Container())
 			{

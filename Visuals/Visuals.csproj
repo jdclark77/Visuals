@@ -161,6 +161,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201306091845247_VisualsFramework.cs" />
+    <Compile Include="Migrations\201306091845247_VisualsFramework.Designer.cs">
+      <DependentUpon>201306091845247_VisualsFramework.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Model1.Views.cs" />
     <Compile Include="Models\VisualContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -220,6 +225,7 @@
     <Content Include="App_Data\Visuals.sdf" />
     <Content Include="App\views\social.html" />
     <Content Include="App\views\socialdetail.html" />
+    <Content Include="CodeFirstMigrations.txt" />
     <Content Include="Content\app.css" />
     <Content Include="Content\base.css">
       <DependentUpon>base.scss</DependentUpon>
@@ -342,7 +348,11 @@
     <Content Include="Views\HotTowel\index.cshtml" />
     <Content Include="Views\HotTowel\_splash.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201306091845247_VisualsFramework.resx">
+      <DependentUpon>201306091845247_VisualsFramework.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

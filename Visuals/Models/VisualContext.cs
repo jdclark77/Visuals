@@ -19,6 +19,9 @@ namespace Visuals.Models
 		public string Message { get; set; }
 		public Article Article { get; set; }
 
+		
+
+
 	}
 	public class Article
 	{
@@ -27,7 +30,7 @@ namespace Visuals.Models
 		public string Link { get; set; }
 		public string Title { get; set; }
 		public string Synopsis { get; set; }
-		public Post Post { get; set; }
+		
 	}
 	public class Pic
 	{
