@@ -64,6 +64,7 @@ define(['services/logger', 'data/Mapping'], (logger, Mapping) ->
 				success: ( data ) =>
 					window.viewModel = this
 					map = new Mapping()
+
 					ko.mapping.fromJS(data, map.SocialNetworkMapping, this)
 					
 					return

@@ -161,12 +161,28 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201306091845247_VisualsFramework.cs" />
-    <Compile Include="Migrations\201306091845247_VisualsFramework.Designer.cs">
-      <DependentUpon>201306091845247_VisualsFramework.cs</DependentUpon>
+    <Compile Include="Models\DataStorage.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataStorage.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DataStorage.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataStorage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataStorage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataStorage.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Model1.Views.cs" />
+    <Compile Include="Models\Person.cs">
+      <DependentUpon>DataStorage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Post.cs">
+      <DependentUpon>DataStorage.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\VisualContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -301,6 +317,24 @@
       <Bare>False</Bare>
       <Iced>False</Iced>
     </Content>
+    <EntityDeploy Include="Models\DataStorage.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataStorage.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DataStorage.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataStorage.edmx</DependentUpon>
+      <LastGenOutput>DataStorage.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DataStorage.edmx.diagram">
+      <DependentUpon>DataStorage.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\DataStorage.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataStorage.edmx</DependentUpon>
+      <LastGenOutput>DataStorage.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DataStorage.edmx.sqlce" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <None Include="Scripts\breeze.intellisense.js" />
     <Content Include="Scripts\Plugins\amplify.js" />
@@ -347,11 +381,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\HotTowel\index.cshtml" />
     <Content Include="Views\HotTowel\_splash.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201306091845247_VisualsFramework.resx">
-      <DependentUpon>201306091845247_VisualsFramework.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -6,6 +6,7 @@ using System.Web;
 
 namespace Visuals.Models
 {
+    /*
 	public class Comment
 	{
 		public int Id { get; set; }
@@ -65,5 +66,5 @@ namespace Visuals.Models
 		public DbSet<Comment> Comments { get; set; }
 		public DbSet<Pic> Pics { get; set; }
 		public DbSet<Post> Posts { get; set; }
-	}
+	}*/
 }

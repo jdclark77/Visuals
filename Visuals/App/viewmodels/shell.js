@@ -28,7 +28,7 @@
             router.mapNav('home');
             router.mapNav('details');
             router.mapNav('feeds');
-            router.mapNav('NewsFeed', 'viewModels/NewsFeed', 'News Feed');
+            router.mapNav('NewsFeed', 'viewmodels/NewsFeed', 'News Feed');
             router.mapNav('Store');
             log('Hot Towel SPA Loaded!', null, true);
             return router.activate('home');

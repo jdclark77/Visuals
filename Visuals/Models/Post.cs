@@ -14,20 +14,10 @@ namespace Visuals.Models
     
     public partial class Post
     {
-        public Post()
-        {
-            this.Comments = new HashSet<Comment>();
-        }
-    
         public int Id { get; set; }
-        public string Avatar { get; set; }
-        public string AvatarLink { get; set; }
         public string Message { get; set; }
         public int PersonId { get; set; }
-        public string User { get; set; }
     
         public virtual Person Person { get; set; }
-        public virtual Article Article { get; set; }
-        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

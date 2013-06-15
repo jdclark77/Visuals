@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Collections.Generic;
+using System.Web.Http;
 using Visuals.Models;
 
 namespace Visuals.Controllers
@@ -8,9 +9,20 @@ namespace Visuals.Controllers
 		[HttpGet]
 		public object Posts(string user)
 		{
+            var context  = new DataStorageContainer();
+            var people = context.People;
 
-
-			var person = new Person
+            context.People.Add(new Person
+              {
+                  Name = "Jake Sully",
+                  MiniAvatar = "http://placehold.it/50x50",
+                  Link = "Home/Home",
+                  Posts = new List<Post> { new Post{Message="First message"}, new Post{Message = "second Mesage"}}
+              });
+            
+            context.SaveChanges();
+           
+			/*var person = new Person
 				             {
 					             Name = "Jake Sully",
 					             MiniAvatar = "http://placehold.it/50x50",
@@ -35,7 +47,7 @@ namespace Visuals.Controllers
 			}
 			//	context.People.Add(person);
 			//	context.SaveChanges();
-			
+			*/
 			/*using(var postContext = new Model1Container())
 			{
 
@@ -271,7 +283,7 @@ namespace Visuals.Controllers
 				context.People.Add(person);
 				context.SaveChanges();
 			}*/
-			return person;
+			return null;
 		}
 	}
 }

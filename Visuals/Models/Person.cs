@@ -17,18 +17,13 @@ namespace Visuals.Models
         public Person()
         {
             this.Posts = new HashSet<Post>();
-            this.Pics = new HashSet<Pic>();
-            this.InterestingPics = new HashSet<Pic>();
         }
     
         public int Id { get; set; }
-        public string Property1 { get; set; }
+        public string Name { get; set; }
         public string MiniAvatar { get; set; }
         public string Link { get; set; }
-        public string Name { get; set; }
     
         public virtual ICollection<Post> Posts { get; set; }
-        public virtual ICollection<Pic> Pics { get; set; }
-        public virtual ICollection<Pic> InterestingPics { get; set; }
     }
 }
